@@ -350,7 +350,7 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 ## 👥 Authors
 
-- Your Name - Initial work
+- Your Name - Abhishek Sahu
 
 ## 🙏 Acknowledgments
 
@@ -363,8 +363,7 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 For issues and questions:
 - Open an issue on GitHub
-- Email: support@echocheck.com
-- Documentation: https://docs.echocheck.com
+- Email: stabhishek7@gmail.com
 
 ## 🗺️ Roadmap
 
@@ -377,6 +376,3 @@ For issues and questions:
 - [ ] Custom model training interface
 - [ ] Integration with cloud storage (S3, GCS)
 
----
-
-**Made with ❤️ for a safer digital world**
