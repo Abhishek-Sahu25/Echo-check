@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: echocheck-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://echocheck:echocheck123@db:5432/echocheck
+      - SECRET_KEY=your-super-secret-key-change-this-in-production
+      - DEVICE=cpu  # Change to cuda if GPU available
+    volumes:
+      - ./backend:/app
+      - backend-uploads:/app/uploads
+      - backend-models:/app/models
+      - backend-spectrograms:/app/spectrograms
+    depends_on:
+      - db
+    networks:
+      - echocheck-network
+    restart: unless-stopped
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: echocheck-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - echocheck-network
+    restart: unless-stopped
+
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: echocheck-db
+    environment:
+      - POSTGRES_USER=echocheck
+      - POSTGRES_PASSWORD=echocheck123
+      - POSTGRES_DB=echocheck
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - echocheck-network
+    restart: unless-stopped
+
+  # Redis (Optional - for caching)
+  redis:
+    image: redis:7-alpine
+    container_name: echocheck-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - echocheck-network
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  backend-uploads:
+  backend-models:
+  backend-spectrograms:
+
+networks:
+  echocheck-network:
+    driver: bridge
