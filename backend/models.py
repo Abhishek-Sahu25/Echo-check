@@ -19,7 +19,7 @@ class User(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relationship
-    analyses = relationship("AnalysisHistory", back_populates="user", cascade="all, delete-orphan")
+    analyses = relationship("AnalysisHistory ", back_populates="user", cascade="all, delete-orphan")
 
 
 class AnalysisHistory(Base):
