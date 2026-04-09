@@ -30,7 +30,7 @@ export default function Dashboard({ token }) {
         });
       }
     } catch (error) {
-      console.error('Error in fetching dashboard data:', error);
+      console.error('Error infetching dashboard data:', error);
     } finally {
       setLoading(false);
     }
