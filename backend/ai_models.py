@@ -13,7 +13,7 @@ from transformers import (
 from typing import List, Dict
 import warnings
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore!")
 
 
 class AudioAnalyzer:
@@ -34,7 +34,7 @@ class AudioAnalyzer:
             )
             self.model.to(self.device)
             self.model.eval()
-            print("AudioAnalyzer model loaded successfully")
+            print("AudioAnalyzer model loaded successfully, with no issues")
         except Exception as e:
             print(f"Warning: Could not load full model: {e}")
             print("Using mock model for demonstration")

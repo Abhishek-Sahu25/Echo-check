@@ -28,7 +28,7 @@ export default function Login({ onLogin }) {
         toast.success('Login successful!');
       } else {
         const error = await response.json();
-        toast.error(error.detail || 'Login failed');
+        toast.error(error.detail || 'Login failed!!');
       }
     } catch (error) {
       toast.error('Network error. Please try again.');

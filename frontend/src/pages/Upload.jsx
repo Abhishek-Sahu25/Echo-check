@@ -39,7 +39,7 @@ export default function Upload({ token }) {
 
   const handleUpload = async () => {
     if (!file) {
-      toast.error('Please select a file first');
+      toast.error('Please select a file first !!');
       return;
     }
 

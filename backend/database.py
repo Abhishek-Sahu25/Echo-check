@@ -16,6 +16,7 @@ load_dotenv()
 # For MySQL:
 # DATABASE_URL = "mysql+pymysql://user:password@localhost:3306/echocheck"
 # For SQLite (development):
+# follow above steps
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./echocheck.db")
 
 # Create engine
