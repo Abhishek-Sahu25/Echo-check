@@ -216,7 +216,7 @@ export default function History({ token }) {
       {/* Pagination hint (can be expanded) */}
       {filteredAnalyses.length > 0 && (
         <div className="mt-6 text-center">
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-650 text-sm">
             {filteredAnalyses.length === 50 ? 'Showing first 50 results' : 'All results displayed'}
           </p>
         </div>

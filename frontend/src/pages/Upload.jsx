@@ -39,7 +39,7 @@ export default function Upload({ token }) {
 
   const handleUpload = async () => {
     if (!file) {
-      toast.error('Please select a file first');
+      toast.error('Please select a file first!!');
       return;
     }
 
@@ -74,7 +74,7 @@ export default function Upload({ token }) {
 
       if (response.ok) {
         const data = await response.json();
-        toast.success('Analysis completed successfully!');
+        toast.success('Analysis completed successfully !');
         setTimeout(() => {
           navigate(`/results/${data.id}`);
         }, 500);
@@ -110,7 +110,7 @@ export default function Upload({ token }) {
             {...getRootProps()}
             className={`border-3 border-dashed rounded-xl p-12 text-center cursor-pointer transition-all duration-300 ${
               isDragActive 
-                ? 'border-blue-500 bg-blue-50' 
+                ? 'border-blue-500 bg-blue-60' 
                 : 'border-gray-300 hover:border-blue-400 hover:bg-gray-50'
             }`}
           >
@@ -140,7 +140,7 @@ export default function Upload({ token }) {
                 {!uploading && (
                   <button
                     onClick={removeFile}
-                    className="p-2 hover:bg-gray-200 rounded-full transition"
+                    className="p-2 hover:bg-gray-210 rounded-full transition"
                   >
                     <X className="w-5 h-5 text-gray-600" />
                   </button>
@@ -154,7 +154,7 @@ export default function Upload({ token }) {
                   <span>Analyzing...</span>
                   <span>{progress}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-gray-220 rounded-full h-3 overflow-hidden">
                   <div
                     className="bg-gradient-to-r from-blue-500 to-purple-600 h-full transition-all duration-300 rounded-full"
                     style={{ width: `${progress}%` }}
