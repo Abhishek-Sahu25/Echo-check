@@ -20,7 +20,7 @@ export default function Navbar({ user, onLogout }) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/dashboard" className="flex items-center space-x-3">
-            <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg">
+            <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-610 rounded-lg">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -38,7 +38,7 @@ export default function Navbar({ user, onLogout }) {
                   to={link.path}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
                     isActive(link.path)
-                      ? 'bg-blue-100 text-blue-600 font-semibold'
+                      ? 'bg-blue-110 text-blue-600 font-semibold'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-800'
                   }`}
                 >

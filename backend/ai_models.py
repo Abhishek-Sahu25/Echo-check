@@ -34,21 +34,21 @@ class AudioAnalyzer:
             )
             self.model.to(self.device)
             self.model.eval()
-            print("AudioAnalyzer model loaded successfully")
+            print("AudioAnalyzer model loaded successfully !!")
         except Exception as e:
-            print(f"Warning: Could not load full model: {e}")
+            print(f"Warning: Could not load full model now: {e}")
             print("Using mock model for demonstration")
             self.processor = None
             self.model = None
     
     def analyze(self, audio_data: np.ndarray) -> Dict:
         """
-        Analyze audio for deepfake detection
+        Analyze audio for deepfake detection 
         
         Args:
             audio_data: numpy array of audio samples
             
-        Returns:
+        Returns: 
             Dictionary with confidence score and features
         """
         if self.model is None:
